@@ -26,9 +26,8 @@ export const App = () => {
     console.log('Effect')
     if (query) {
    
-const Images = async () => {
-
-        try {
+async function Images(){
+      try {
           setIsLoading(true);
           const data = await fetchImages(query, page);
           setTotalImages(data.totalHits);
@@ -38,11 +37,11 @@ const Images = async () => {
             setImages([]);
             toast.info('Sorry, there are no images matching your search query. Please try again.');
             return;
-          }
+            }
 
-          setImages(prevImages => [...prevImages, ...data.hits]);
-        }
-        catch (error) {
+            setImages(prevImages => [...prevImages, ...data.hits]);
+         
+      } catch (error) {
           setError(error);
           toast.error('Please try again.')
         } finally {
