@@ -26,8 +26,8 @@ export const App = () => {
     console.log('Effect')
     if (query) {
    
-      async function Images() {
-   
+      
+   const Images = async ()=>{
       try {
           setIsLoading(true);
           const data = await fetchImages(query, page);
