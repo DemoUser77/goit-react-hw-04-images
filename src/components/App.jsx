@@ -27,7 +27,7 @@ export const App = () => {
     if (query) {
    
       
-   const Images = async ()=>{
+    async function Images (){
       try {
           setIsLoading(true);
           const data = await fetchImages(query, page);
